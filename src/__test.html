@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        /* background: #1a1a1a; */
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1600px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+      svg {
+        /* background: #1a1a1a; */
+        border: 1px solid #333;
+        width: 100%;
+        height: auto;
+      }
+
+      .overcapacity {
+        animation: pulse 0.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          stroke-opacity: 0.8;
+        }
+        50% {
+          stroke-opacity: 0.4;
+        }
+        100% {
+          stroke-opacity: 0.8;
+        }
+      }
+    </style>
+
+    <!-- Include only AG Grid script -->
+    <script src="https://unpkg.com/ag-grid-enterprise/dist/ag-grid-enterprise.min.js"></script>
+
+    <style>
+      #gridContainer {
+        height: 600px;
+        width: 100%;
+      }
+
+      /* Optional: Custom styling for the tree nodes */
+      .ag-theme-quartz-dark .ag-group-expanded,
+      .ag-theme-quartz-dark .ag-group-contracted {
+        color: #00b8d4;
+      }
+
+      .ag-theme-quartz-dark .ag-row {
+        border-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div id="gridContainer"></div>
+      <div id="controlsContainer"></div>
+      <div id="diagramContainer"></div>
+    </div>
+  </body>
+  <script src="test.js"></script>
+</html>
